@@ -1,4 +1,4 @@
-cours_name = 'PMM-2'
+cours_name = 'Створення прикладних програм на мові Python'
 lab_num = 1
 print ('[1] ' + cours_name, lab_num, sep = ', ')
 
