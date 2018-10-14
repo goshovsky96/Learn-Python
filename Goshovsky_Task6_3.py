@@ -30,4 +30,4 @@ index = search_ind(s)
 
 print('Кількість літер в рядку:',len(s))
 print('Індекси: 1 літера - {}, остання - {}'.format(index[0],index[1]))
-print('Результат:',out_text(s,index))
+print('Результат:', out_text(s,index))
