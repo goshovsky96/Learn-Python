@@ -1,5 +1,6 @@
 import requests
 from datetime import date
+from bs4 import BeautifulSoup
 sdate = "01.09.2018"
 edate = "30.11.2018"
 teacher = "Савка (п) Іван Ярославович" 
