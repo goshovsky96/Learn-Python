@@ -1,10 +1,8 @@
 import requests
 from datetime import date
-dict_room = {1: set(), 2: set(), 3: set(), 4: set(), 5: set(), 6: set(), 7: set()}
 sdate = "01.09.2018"
 edate = "30.11.2018"
-teacher = "Ñàâêà (ï) ²âàí ßğîñëàâîâè÷"
-group = "ÏÌÌ-2"
+teacher = "Ğ¡Ğ°Ğ²ĞºĞ° (Ğ¿) Ğ†Ğ²Ğ°Ğ½ Ğ¯Ñ€Ğ¾ÑĞ»Ğ°Ğ²Ğ¾Ğ²Ğ¸Ñ‡" 
 url = "http://asu.pnu.edu.ua/cgi-bin/timetable.cgi"
 headers = {'Content-Type': 'text/html; charset=windows-1251'}
 data = {'teacher': teacher.encode('cp1251'), 'sdate': sdate, 'edate': edate}
@@ -16,11 +14,10 @@ dict_line = {}
 if rows:
     for row in rows:
         cols = row.find_all('td')
-        if cols[2].text != '':
-            if (len(cols[2].text.split()) != 0):
-                key = cols[2].text.split()[-1] 
-                if (key in dict_line.keys()):
-                    dict_line[key]+=1
-                else: 
-                    dict_line[key] = 1
+        if (cols[2].text != '') and (len(cols[2].text.split()) != 0):
+            key = cols[2].text.split()[-1]
+            if (key in dict_line.keys()):
+                dict_line[key]+=1
+            else:
+                dict_line[key] = 1
 print(dict_line)
